@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install --no-deps -vv .
+  script: {{ PYTHON }} -m pip install --no-deps --no-build-isolation -vv .
 
 requirements:
   host:
@@ -57,5 +57,9 @@ about:
   doc_source_url: https://github.com/robotframework/SSHLibrary/blob/master/docs/SSHLibrary-{{ version }}.rst
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/49356
+    reason: Client request
   recipe-maintainers:
+    - anaobi
     - bollwyvl
